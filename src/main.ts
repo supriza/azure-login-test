@@ -7,7 +7,7 @@ import { AzureCliLogin } from './Cli/AzureCliLogin';
 async function main() {
     try {
         setUserAgent();
-
+        console.log("Hello world");
         // prepare the login configuration
         var loginConfig = new LoginConfig();
         await loginConfig.initialize();
